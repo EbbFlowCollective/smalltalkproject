@@ -1,44 +1,131 @@
 body {
   margin: 0;
-  background-color: #111111;
+  background-color: #050505;
   color: #f5f1e8;
   font-family: Georgia, serif;
+  line-height: 1.7;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 100vh;
-  text-align: center;
+section {
+  padding: 140px 30px;
 }
 
 .container {
-  max-width: 700px;
-  padding: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+.narrow {
+  max-width: 700px;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: 0.95;
+  margin-bottom: 2rem;
   font-weight: normal;
 }
 
 .tagline {
-  font-size: 1.4rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .description {
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 1.2rem;
   opacity: 0.75;
+  max-width: 700px;
   margin-bottom: 2rem;
 }
 
 .prc {
-  font-size: 0.85rem;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+.room {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.room h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  font-weight: normal;
+}
+
+.room p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.82;
+}
+
+.ritual,
+.values {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.step h3,
+.value h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.step p,
+.value p {
+  margin: 0;
+}
+
+.final {
+  padding-bottom: 180px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #f5f1e8;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 16px 28px;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgba(255,255,255,0.08);
+}
+
+@media (max-width: 768px) {
+
+  section {
+    padding: 100px 24px;
+  }
+
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+  }
+
+  .room h2 {
+    font-size: 2.3rem;
+  }
+
+  .step h3,
+  .value h3 {
+    font-size: 1.5rem;
+  }
+
 }
