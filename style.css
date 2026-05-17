@@ -1,9 +1,9 @@
 :root {
   --black: #0b0b0a;
-  --charcoal: #15130f;
-  --ivory: #f3eee5;
-  --muted: #b8ada0;
-  --gold: #b88a44;
+  --charcoal: #14110d;
+  --ivory: #f4efe6;
+  --muted: #b9afa3;
+  --gold: #c5964a;
 }
 
 * {
@@ -17,92 +17,112 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 20% 10%, rgba(184, 138, 68, 0.12), transparent 28%),
+    radial-gradient(circle at 18% 10%, rgba(197, 150, 74, 0.14), transparent 28%),
     linear-gradient(180deg, var(--black), var(--charcoal));
   color: var(--ivory);
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
 
-main {
-  width: 100%;
-}
-
 .section {
   min-height: 100vh;
-  padding: 110px 12%;
+  padding: 110px 14%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-top: 1px solid rgba(243, 238, 229, 0.08);
-  animation: fadeUp 1.4s ease both;
+  border-top: 1px solid rgba(244, 239, 230, 0.08);
 }
 
 .hero {
-  align-items: flex-start;
   border-top: none;
 }
 
-.hero-mark {
-  font-family: "Inter", sans-serif;
-  font-size: clamp(7rem, 22vw, 18rem);
-  font-weight: 500;
-  letter-spacing: -0.12em;
-  line-height: 0.8;
-  margin-bottom: 2.5rem;
+.kicker {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin: 0 0 1.6rem;
 }
 
-.hero-submark {
+.hero-mark {
+  font-size: clamp(6rem, 18vw, 15rem);
+  line-height: 0.82;
+  letter-spacing: -0.08em;
+  margin: 0 0 2rem;
+  font-weight: 600;
+}
+
+.hero-name,
+.section h2 {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2rem, 5vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.hero-name {
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
   line-height: 1;
-  margin-bottom: 2rem;
-  color: var(--ivory);
+  margin: 0 0 1.4rem;
 }
 
 .hero-tagline {
-  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
   color: var(--muted);
-  letter-spacing: 0.02em;
+  margin: 0;
 }
 
-.section-title {
-  font-family: "Instrument Serif", serif;
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  font-weight: 400;
-  line-height: 0.95;
-  margin: 0 0 4rem;
-  color: var(--ivory);
+.section h2 {
+  max-width: 980px;
+  font-size: clamp(2.8rem, 5.8vw, 5.4rem);
+  line-height: 1.02;
+  margin: 0 0 3rem;
 }
 
-.subsection {
-  max-width: 780px;
-  margin-bottom: 3.5rem;
-}
-
-.subsection h3 {
-  font-family: "Inter", sans-serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 0 0 1rem;
-  font-weight: 500;
-}
-
-.subsection p {
-  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
-  line-height: 1.9;
-  color: var(--muted);
-  margin: 0 0 1.4rem;
+.section p {
   max-width: 760px;
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  line-height: 1.85;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.ethos h2 {
+  max-width: 1050px;
+}
+
+.list {
+  max-width: 860px;
+  display: grid;
+  gap: 2.4rem;
+  margin-top: 1rem;
+}
+
+.list div {
+  border-left: 1px solid rgba(197, 150, 74, 0.35);
+  padding-left: 1.4rem;
+}
+
+.list h3 {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  margin: 0 0 0.8rem;
+  font-weight: 600;
+}
+
+.list p {
+  margin-bottom: 0;
 }
 
 .email-button {
   display: inline-block;
-  margin-top: 2rem;
-  padding: 17px 28px;
-  border: 1px solid rgba(184, 138, 68, 0.55);
+  width: fit-content;
+  margin-top: 2.2rem;
+  padding: 16px 28px;
+  border: 1px solid rgba(197, 150, 74, 0.58);
   color: var(--ivory);
   text-decoration: none;
   letter-spacing: 0.04em;
@@ -110,15 +130,17 @@ main {
 }
 
 .email-button:hover {
-  background-color: var(--gold);
+  background: var(--gold);
   color: var(--black);
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(26px);
-  }
+.section {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
   to {
     opacity: 1;
     transform: translateY(0);
@@ -127,22 +149,18 @@ main {
 
 @media (max-width: 800px) {
   .section {
-    padding: 95px 9%;
+    padding: 90px 9%;
   }
 
   .hero-mark {
-    font-size: 7.5rem;
+    font-size: 7rem;
   }
 
-  .hero-submark {
-    font-size: 2.7rem;
+  .section h2 {
+    font-size: 3.2rem;
   }
 
-  .section-title {
-    font-size: 3.6rem;
-  }
-
-  .subsection {
-    margin-bottom: 2.8rem;
+  .hero-name {
+    font-size: 2.8rem;
   }
 }
