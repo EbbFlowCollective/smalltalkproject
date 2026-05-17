@@ -26,17 +26,18 @@ body {
 }
 
 .section {
-  min-height: 100vh;
-  padding: 92px 14%;
+  min-height: 88vh;
+  padding: 86px 14%;
   display: flex;
   align-items: center;
-  border-top: 1px solid rgba(244, 239, 230, 0.07);
+  border-top: 1px solid rgba(244, 239, 230, 0.065);
   opacity: 0;
-  transform: translateY(22px);
-  animation: fadeIn 1.1s ease forwards;
+  transform: translateY(18px);
+  animation: fadeIn 1.05s ease forwards;
 }
 
 .hero {
+  min-height: 100vh;
   border-top: none;
 }
 
@@ -82,9 +83,9 @@ h2 {
   font-weight: 400;
   letter-spacing: -0.012em;
   max-width: 900px;
-  font-size: clamp(2.45rem, 4.45vw, 4.25rem);
+  font-size: clamp(2.4rem, 4.25vw, 4.05rem);
   line-height: 1.07;
-  margin: 0 0 2.35rem;
+  margin: 0 0 2.25rem;
   color: var(--ivory);
 }
 
@@ -95,17 +96,17 @@ h2 {
 
 p {
   max-width: 740px;
-  font-size: clamp(1.03rem, 1.22vw, 1.14rem);
-  line-height: 1.85;
+  font-size: clamp(1.03rem, 1.2vw, 1.13rem);
+  line-height: 1.83;
   color: var(--muted);
-  margin: 0 0 1.3rem;
+  margin: 0 0 1.25rem;
 }
 
 .list {
   max-width: 840px;
   display: grid;
-  gap: 1.95rem;
-  margin-top: 2.35rem;
+  gap: 1.75rem;
+  margin-top: 2.15rem;
 }
 
 .list-item {
@@ -119,7 +120,7 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.17em;
   font-size: 0.82rem;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.7rem;
   font-weight: 700;
 }
 
@@ -131,7 +132,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
-  margin-top: 4rem;
+  margin-top: 3.75rem;
   max-width: 980px;
 }
 
@@ -146,7 +147,7 @@ p {
 
 .button {
   display: inline-block;
-  margin-top: 1.45rem;
+  margin-top: 1.35rem;
   padding: 15px 25px;
   border: 1px solid rgba(197, 150, 74, 0.58);
   color: var(--ivory);
@@ -169,7 +170,12 @@ p {
 
 @media (max-width: 850px) {
   .section {
-    padding: 84px 9%;
+    min-height: 88vh;
+    padding: 78px 9%;
+  }
+
+  .hero {
+    min-height: 100vh;
   }
 
   .mark {
