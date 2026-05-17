@@ -18,7 +18,7 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 18% 8%, rgba(197, 150, 74, 0.12), transparent 30%),
+    radial-gradient(circle at 18% 8%, rgba(197, 150, 74, 0.11), transparent 30%),
     linear-gradient(180deg, var(--black), var(--charcoal));
   color: var(--ivory);
   font-family: "Inter", sans-serif;
@@ -30,7 +30,7 @@ body {
   padding: 86px 14%;
   display: flex;
   align-items: center;
-  border-top: 1px solid rgba(244, 239, 230, 0.065);
+  border-top: 1px solid rgba(244, 239, 230, 0.04);
   opacity: 0;
   transform: translateY(18px);
   animation: fadeIn 1.05s ease forwards;
@@ -83,15 +83,16 @@ h2 {
   font-weight: 400;
   letter-spacing: -0.012em;
   max-width: 900px;
-  font-size: clamp(2.4rem, 4.25vw, 4.05rem);
-  line-height: 1.07;
+  font-size: clamp(2.35rem, 4.1vw, 3.95rem);
+  line-height: 1.08;
   margin: 0 0 2.25rem;
   color: var(--ivory);
 }
 
 .section:nth-of-type(2) h2 {
-  max-width: 980px;
-  font-size: clamp(3rem, 5.2vw, 5rem);
+  max-width: 960px;
+  font-size: clamp(2.85rem, 4.85vw, 4.65rem);
+  line-height: 1.08;
 }
 
 p {
@@ -188,7 +189,7 @@ p {
 
   h2,
   .section:nth-of-type(2) h2 {
-    font-size: 2.85rem;
+    font-size: 2.75rem;
   }
 
   .invitation-options {
