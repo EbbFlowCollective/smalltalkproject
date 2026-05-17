@@ -27,10 +27,13 @@ body {
 
 .section {
   min-height: 100vh;
-  padding: 95px 14%;
+  padding: 92px 14%;
   display: flex;
   align-items: center;
   border-top: 1px solid rgba(244, 239, 230, 0.07);
+  opacity: 0;
+  transform: translateY(22px);
+  animation: fadeIn 1.1s ease forwards;
 }
 
 .hero {
@@ -48,11 +51,11 @@ body {
   letter-spacing: 0.24em;
   font-size: 0.78rem;
   font-weight: 700;
-  margin: 0 0 1.3rem;
+  margin: 0 0 1.25rem;
 }
 
 .mark {
-  font-size: clamp(5.4rem, 15vw, 12rem);
+  font-size: clamp(7rem, 18vw, 14.5rem);
   line-height: 0.86;
   letter-spacing: -0.055em;
   margin: 0 0 2rem;
@@ -61,14 +64,14 @@ body {
 
 .project-name {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2.2rem, 4.2vw, 4rem);
+  font-size: clamp(2.4rem, 4.6vw, 4.4rem);
   line-height: 1;
-  margin: 0 0 1.2rem;
+  margin: 0 0 1.15rem;
   color: var(--ivory);
 }
 
 .tagline {
-  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
   line-height: 1.6;
   color: var(--soft);
   margin: 0;
@@ -77,27 +80,32 @@ body {
 h2 {
   font-family: "Instrument Serif", serif;
   font-weight: 400;
-  letter-spacing: -0.015em;
-  max-width: 940px;
-  font-size: clamp(2.65rem, 5vw, 4.8rem);
-  line-height: 1.05;
-  margin: 0 0 2.4rem;
+  letter-spacing: -0.012em;
+  max-width: 900px;
+  font-size: clamp(2.45rem, 4.45vw, 4.25rem);
+  line-height: 1.07;
+  margin: 0 0 2.35rem;
   color: var(--ivory);
+}
+
+.section:nth-of-type(2) h2 {
+  max-width: 980px;
+  font-size: clamp(3rem, 5.2vw, 5rem);
 }
 
 p {
   max-width: 740px;
-  font-size: clamp(1.03rem, 1.25vw, 1.16rem);
+  font-size: clamp(1.03rem, 1.22vw, 1.14rem);
   line-height: 1.85;
   color: var(--muted);
-  margin: 0 0 1.35rem;
+  margin: 0 0 1.3rem;
 }
 
 .list {
   max-width: 840px;
   display: grid;
-  gap: 2rem;
-  margin-top: 2.4rem;
+  gap: 1.95rem;
+  margin-top: 2.35rem;
 }
 
 .list-item {
@@ -123,7 +131,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
-  margin-top: 4.2rem;
+  margin-top: 4rem;
   max-width: 980px;
 }
 
@@ -138,7 +146,7 @@ p {
 
 .button {
   display: inline-block;
-  margin-top: 1.5rem;
+  margin-top: 1.45rem;
   padding: 15px 25px;
   border: 1px solid rgba(197, 150, 74, 0.58);
   color: var(--ivory);
@@ -152,12 +160,6 @@ p {
   color: var(--black);
 }
 
-.section {
-  opacity: 0;
-  transform: translateY(22px);
-  animation: fadeIn 1.1s ease forwards;
-}
-
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -167,19 +169,20 @@ p {
 
 @media (max-width: 850px) {
   .section {
-    padding: 86px 9%;
+    padding: 84px 9%;
   }
 
   .mark {
-    font-size: 6.5rem;
+    font-size: 7.2rem;
   }
 
   .project-name {
-    font-size: 2.7rem;
+    font-size: 2.8rem;
   }
 
-  h2 {
-    font-size: 2.9rem;
+  h2,
+  .section:nth-of-type(2) h2 {
+    font-size: 2.85rem;
   }
 
   .invitation-options {
