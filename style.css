@@ -27,33 +27,32 @@ body {
 
 .site-header {
   width: 100%;
-  padding: 28px 7%;
+  padding: 18px 7%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  background: rgba(244, 239, 230, 0.78);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  background: rgba(244, 239, 230, 0.72);
+  backdrop-filter: blur(10px);
 }
 
 .brand img {
-  width: 240px;
+  width: 185px;
   max-width: 100%;
   display: block;
 }
 
 main {
-  padding-top: 120px;
+  padding-top: 82px;
 }
 
 .section {
-  padding: 120px 7%;
+  padding: 110px 7%;
   border-top: 1px solid var(--line);
 }
 
 .hero {
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 82px);
   display: flex;
   align-items: center;
   border-top: none;
@@ -208,7 +207,7 @@ p {
 }
 
 .site-footer {
-  padding: 80px 7%;
+  padding: 70px 7%;
   border-top: 1px solid var(--line);
   text-align: center;
 }
@@ -226,15 +225,15 @@ p {
 @media (max-width: 900px) {
 
   .site-header {
-    padding: 22px 7%;
+    padding: 16px 7%;
   }
 
   .brand img {
-    width: 190px;
+    width: 165px;
   }
 
   .section {
-    padding: 90px 7%;
+    padding: 85px 7%;
   }
 
   h1 {
