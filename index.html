@@ -101,46 +101,94 @@ You do not need to have everything figured out before reaching out.
 </p>
 
 <p>
+A note is enough.
+</p>
+
+<p>
 You may be writing because you would like to be seated, because you have a space to offer, or because something about the project resonated with you.
 </p>
 
 <p>
-Share only what helps us respond with care.
+Share only what helps us receive you with care.
 </p>
 
 </div>
 
-<div class="invitation-actions">
-
-<div class="invitation-card">
-
-<h3>Request a Seat</h3>
+<div class="note-received" id="note-received" hidden>
+<h3>Your note has been received.</h3>
 
 <p>
-Let us know you would like to be considered for a future pilot conversation.
+Thank you for beginning here. We will read with care and respond as we are able.
 </p>
-
-<a class="button" href="mailto:hello@smalltalkproject.com?subject=Request%20a%20Seat">
-Begin with a Note
-</a>
-
-</div>
-
-<div class="invitation-card">
-
-<h3>Offer a Space</h3>
 
 <p>
-Let us know about a space that may be able to hold a small pilot gathering.
+Now Serving Conversation.
+</p>
+</div>
+
+<div class="note-error" id="note-error" aria-live="polite"></div>
+
+<form
+  id="stp-note-form"
+  class="note-form"
+  action="https://formspree.io/f/xlgkwnjn"
+  method="POST"
+>
+
+<input type="hidden" name="_subject" value="New Small Talk Project note" />
+
+<label>
+Name
+<input type="text" name="name" autocomplete="name" required />
+</label>
+
+<label>
+Email
+<input type="email" name="email" autocomplete="email" required />
+</label>
+
+<label>
+Phone, if helpful
+<input type="tel" name="phone" autocomplete="tel" />
+</label>
+
+<label>
+Where are you writing from?
+<input type="text" name="city_area" autocomplete="address-level2" />
+</label>
+
+<label>
+This note is about…
+<select name="reason" required>
+<option value="">Please choose one</option>
+<option value="I would like to be seated">I would like to be seated.</option>
+<option value="I may have a space to offer">I may have a space to offer.</option>
+<option value="I would like to begin a conversation">I would like to begin a conversation.</option>
+<option value="I am not sure yet">I am not sure yet.</option>
+</select>
+</label>
+
+<label>
+Leave your note.
+<textarea
+  name="note"
+  placeholder="What brings you here? What would help us receive you well?"
+  required
+></textarea>
+</label>
+
+<p class="form-note">
+If you are offering a space, please include the name of the space and where it is located. If you are hoping to be seated, share anything that would help us receive you well.
 </p>
 
-<a class="button" href="mailto:hello@smalltalkproject.com?subject=Offer%20a%20Space">
-Begin with a Note
-</a>
+<button class="button" type="submit">Leave the Note</button>
 
-</div>
+</form>
 
-</div>
+<p class="email-fallback">
+Prefer email? You may also write to
+<a href="mailto:hello@smalltalkproject.com">hello@smalltalkproject.com</a>.
+</p>
 
 </div>
 </section>
@@ -152,6 +200,51 @@ Begin with a Note
 <p>A Civic Hospitality Initiative</p>
 <p>Now Serving Conversation.</p>
 </footer>
+
+<script>
+const form = document.getElementById("stp-note-form");
+const successMessage = document.getElementById("note-received");
+const errorMessage = document.getElementById("note-error");
+
+if (form) {
+  form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const button = form.querySelector("button[type='submit']");
+    const originalButtonText = button.textContent;
+
+    button.disabled = true;
+    button.textContent = "Leaving the Note...";
+    errorMessage.textContent = "";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        form.hidden = true;
+        successMessage.hidden = false;
+        successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        errorMessage.textContent = "We could not receive your note just now. Please try again, or write to hello@smalltalkproject.com.";
+        button.disabled = false;
+        button.textContent = originalButtonText;
+      }
+    } catch (error) {
+      errorMessage.textContent = "We could not receive your note just now. Please try again, or write to hello@smalltalkproject.com.";
+      button.disabled = false;
+      button.textContent = originalButtonText;
+    }
+  });
+}
+</script>
 
 </body>
 </html>
