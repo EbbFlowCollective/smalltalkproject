@@ -18,6 +18,58 @@ content="The Small Talk Project is preparing small pilot conversations in borrow
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="style.css" />
+
+<style>
+.note-form {
+  margin-top: 3rem;
+  max-width: 720px;
+}
+
+.note-form label {
+  display: block;
+  margin-bottom: 1.4rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.note-form input,
+.note-form select,
+.note-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.55rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(23, 20, 17, 0.18);
+  border-radius: 0;
+  background: transparent;
+  color: #171411;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+.note-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.note-form .form-note {
+  margin-top: -0.6rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.92rem;
+  color: #7d746a;
+}
+
+.note-form button {
+  margin-top: 0.5rem;
+}
+
+.email-fallback {
+  margin-top: 2rem;
+  color: #7d746a;
+}
+</style>
+
 </head>
 
 <body>
@@ -60,18 +112,6 @@ A little time set aside for conversation.
 
 <h2 class="serving">Now Serving Conversation.</h2>
 
-<div class="hero-actions">
-
-<a class="button" href="#begin-with-a-note">
-Begin with a Note
-</a>
-
-<a class="text-link" href="#pilot">
-Pilot Season
-</a>
-
-</div>
-
 </div>
 </section>
 
@@ -90,12 +130,13 @@ The Small Talk Project is beginning with intentionally small pilot gatherings fo
 We are currently welcoming people who would like to be seated, spaces that may be willing to host, and community partners who believe conversation still matters.
 </p>
 
-<div class="offering">
-<p>Small gatherings.</p>
-<p>Seated in pairs.</p>
-<p>Approximately thirty minutes.</p>
-<p>No debate stage. No performance. No pressure to solve everything.</p>
-</div>
+<p>
+Small gatherings. Seated in pairs. Approximately thirty minutes.
+</p>
+
+<p>
+No debate stage. No performance. No pressure to solve everything.
+</p>
 
 <p>
 Each gathering is held with presence, respect, and curiosity.
@@ -125,37 +166,66 @@ You may be writing because you would like to be seated, because you have a space
 Share only what helps us respond with care.
 </p>
 
-<div class="invitation-options">
+<form class="note-form" action="REPLACE_WITH_YOUR_FORM_ENDPOINT" method="POST">
 
-<div class="invitation-card">
+<input type="hidden" name="_subject" value="New Small Talk Project note" />
 
-<h3>Request a Seat</h3>
+<label>
+Name
+<input type="text" name="name" autocomplete="name" required />
+</label>
 
-<p>
-Let us know you would like to be considered for a future pilot conversation.
+<label>
+Email
+<input type="email" name="email" autocomplete="email" required />
+</label>
+
+<label>
+Phone
+<input type="tel" name="phone" autocomplete="tel" />
+</label>
+
+<p class="form-note">
+Optional, but helpful if you are interested in being seated.
 </p>
 
-<a class="button" href="mailto:hello@smalltalkproject.com?subject=Request%20a%20Seat&body=Hello%20Small%20Talk%20Project%2C%0D%0A%0D%0AI%20am%20reaching%20out%20because%20I%20would%20like%20to%20be%20seated.%0D%0A%0D%0AName%3A%0D%0ACity%20%2F%20area%3A%0D%0APhone%20%28optional%29%3A%0D%0ANote%3A%0D%0A">
-Begin with a Note
-</a>
+<label>
+City / area
+<input type="text" name="city_area" autocomplete="address-level2" />
+</label>
 
-</div>
+<label>
+I am reaching out because…
+<select name="reason" required>
+<option value="">Please choose one</option>
+<option value="I’d like to be seated">I’d like to be seated</option>
+<option value="I have a space to offer">I have a space to offer</option>
+<option value="I’m curious and would like to learn more">I’m curious and would like to learn more</option>
+<option value="I’m not sure yet">I’m not sure yet</option>
+</select>
+</label>
 
-<div class="invitation-card">
+<label>
+Leave us a note.
+<textarea
+  name="note"
+  placeholder="What brings you here? What would you like us to know?"
+  required
+></textarea>
+</label>
 
-<h3>Offer a Space</h3>
-
-<p>
-Let us know about a space that may be able to hold a small pilot gathering.
+<p class="form-note">
+If you are offering a space, please include the name of the space and where it is located. If you are hoping to be seated, please share anything that would help us receive you well.
 </p>
 
-<a class="button" href="mailto:hello@smalltalkproject.com?subject=Offer%20a%20Space&body=Hello%20Small%20Talk%20Project%2C%0D%0A%0D%0AI%20am%20reaching%20out%20because%20I%20may%20have%20a%20space%20to%20offer.%0D%0A%0D%0AName%3A%0D%0ASpace%20name%3A%0D%0ACity%20%2F%20area%3A%0D%0APhone%20%28optional%29%3A%0D%0ANote%3A%0D%0A">
-Begin with a Note
-</a>
+<button class="button" type="submit">Send Note</button>
 
-</div>
+</form>
 
-</div>
+<p class="email-fallback">
+Prefer email? You may also write to
+<a href="mailto:hello@smalltalkproject.com">hello@smalltalkproject.com</a>.
+</p>
 
 </div>
 </section>
