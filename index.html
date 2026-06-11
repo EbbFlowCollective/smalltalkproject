@@ -19,7 +19,7 @@
       --soft-charcoal: #211d19;
       --text: #3a342d;
       --muted: #7d746a;
-      --line: rgba(58, 52, 45, 0.18);
+      --line: rgba(58, 52, 45, 0.16);
       --button: #211d19;
       --button-text: #f4efe6;
     }
@@ -49,27 +49,14 @@
       overflow-x: hidden;
     }
 
-    .section {
-      padding: 72px 24px;
-    }
-
-    .inner {
-      max-width: 920px;
-      margin: 0 auto;
-    }
-
-    .narrow {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
     .site-header {
       padding: 24px;
       border-bottom: 1px solid var(--line);
+      background: rgba(244, 239, 230, 0.94);
     }
 
     .site-header-inner {
-      max-width: 1100px;
+      max-width: 1080px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -79,8 +66,8 @@
 
     .brand {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.05rem;
-      letter-spacing: 0.04em;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
       text-transform: lowercase;
       color: var(--charcoal);
     }
@@ -89,7 +76,7 @@
       display: flex;
       gap: 18px;
       flex-wrap: wrap;
-      font-size: 0.9rem;
+      font-size: 0.86rem;
       color: var(--muted);
     }
 
@@ -101,34 +88,34 @@
       color: var(--charcoal);
     }
 
+    .section {
+      padding: 76px 24px;
+    }
+
+    .inner {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .narrow {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
     .hero {
       min-height: 82vh;
       display: flex;
       align-items: center;
+      padding: 84px 24px 96px;
       text-align: center;
-      padding: 96px 24px;
     }
 
-    .mark {
-      width: 52px;
-      height: 36px;
-      margin: 0 auto 32px;
-      border: 1.5px solid var(--charcoal);
-      border-radius: 2px;
-      position: relative;
-      opacity: 0.85;
-    }
-
-    .mark::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 50%;
-      border-bottom: 1.5px solid var(--charcoal);
-      transform: skewY(-18deg);
-      transform-origin: left top;
+    .eyebrow {
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
     h1,
@@ -137,40 +124,41 @@
       font-family: Georgia, "Times New Roman", serif;
       font-weight: 400;
       color: var(--charcoal);
-      line-height: 1.1;
+      line-height: 1.12;
       margin: 0;
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 6.8rem);
-      letter-spacing: -0.055em;
-      margin-bottom: 32px;
+      max-width: 760px;
+      margin: 0 auto 30px;
+      font-size: clamp(2.55rem, 6vw, 4.85rem);
+      letter-spacing: -0.045em;
     }
 
     h2 {
-      font-size: clamp(2.2rem, 5vw, 4.25rem);
-      letter-spacing: -0.04em;
+      font-size: clamp(2rem, 4.5vw, 3.45rem);
+      letter-spacing: -0.035em;
       margin-bottom: 24px;
     }
 
     h3 {
-      font-size: clamp(1.6rem, 3vw, 2.25rem);
-      letter-spacing: -0.03em;
+      font-size: clamp(1.55rem, 3vw, 2.05rem);
+      letter-spacing: -0.025em;
       margin-bottom: 16px;
     }
 
     .hero-lines {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.35rem, 3vw, 2.1rem);
-      line-height: 1.35;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      line-height: 1.45;
       color: var(--soft-charcoal);
-      margin-bottom: 32px;
+      margin: 0 auto 34px;
     }
 
     .hero-description {
-      max-width: 680px;
-      margin: 0 auto 36px;
-      font-size: 1.08rem;
+      max-width: 610px;
+      margin: 0 auto;
+      font-size: 1.02rem;
       color: var(--text);
     }
 
@@ -178,23 +166,28 @@
       margin: 0 0 12px;
     }
 
+    .hero-note {
+      margin-top: 28px;
+      color: var(--soft-charcoal);
+    }
+
     .cta-row {
       display: flex;
       justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 32px;
+      margin-top: 34px;
     }
 
     .button {
       display: inline-block;
-      padding: 14px 22px;
+      padding: 13px 21px;
       border-radius: 999px;
       text-decoration: none;
       border: 1px solid var(--button);
       background: var(--button);
       color: var(--button-text);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       letter-spacing: 0.02em;
       transition: opacity 160ms ease, transform 160ms ease;
     }
@@ -218,39 +211,47 @@
     }
 
     .lede {
-      font-size: 1.18rem;
+      font-size: 1.12rem;
       color: var(--text);
     }
 
-    .quiet-list {
-      list-style: none;
-      padding: 0;
-      margin: 28px 0 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .quiet-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--line);
+    .small-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--line);
+      margin: 34px auto;
     }
 
     .two-column {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 32px;
+      gap: 28px;
       margin-top: 36px;
     }
 
     .card {
       border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 32px;
-      background: rgba(244, 239, 230, 0.58);
+      border-radius: 24px;
+      padding: 30px;
+      background: rgba(244, 239, 230, 0.52);
+    }
+
+    .quiet-list {
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 0;
+      display: grid;
+      gap: 0;
+    }
+
+    .quiet-list li {
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--text);
     }
 
     .callout {
-      padding: 88px 24px;
+      padding: 82px 24px;
       text-align: center;
       background: var(--soft-charcoal);
       color: var(--paper);
@@ -258,12 +259,12 @@
 
     .callout h2 {
       color: var(--paper);
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
 
     .callout p {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.6rem, 4vw, 3rem);
+      font-size: clamp(1.45rem, 3.6vw, 2.65rem);
       line-height: 1.25;
       margin: 0;
     }
@@ -286,9 +287,9 @@
     textarea {
       width: 100%;
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: 16px;
       padding: 14px 16px;
-      background: rgba(255, 255, 255, 0.38);
+      background: rgba(255, 255, 255, 0.34);
       color: var(--charcoal);
       font: inherit;
     }
@@ -300,8 +301,8 @@
 
     .form-note {
       color: var(--muted);
-      font-size: 0.95rem;
-      margin-top: 10px;
+      font-size: 0.92rem;
+      margin-top: 8px;
     }
 
     .submit-row {
@@ -313,7 +314,7 @@
       border: 1px solid var(--button);
       background: var(--button);
       color: var(--button-text);
-      padding: 14px 24px;
+      padding: 13px 23px;
       border-radius: 999px;
       font: inherit;
       letter-spacing: 0.02em;
@@ -333,11 +334,11 @@
       padding: 44px 24px;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
 
     .site-footer-inner {
-      max-width: 1100px;
+      max-width: 1080px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -357,11 +358,15 @@
 
       .hero {
         min-height: auto;
-        padding: 72px 22px;
+        padding: 72px 22px 82px;
       }
 
       .section {
-        padding: 56px 22px;
+        padding: 58px 22px;
+      }
+
+      h1 {
+        font-size: clamp(2.45rem, 13vw, 3.7rem);
       }
 
       .two-column {
@@ -393,7 +398,7 @@
     <main>
       <section class="hero">
         <div class="inner">
-          <div class="mark" aria-hidden="true"></div>
+          <div class="eyebrow">now serving conversation</div>
 
           <h1>Maybe it is time for the easy conversations.</h1>
 
@@ -403,10 +408,13 @@
             The beautiful ones.
           </div>
 
+          <div class="small-rule"></div>
+
           <div class="hero-description">
             <p>The Small Talk Project creates simple, seated conversations in borrowed public spaces.</p>
             <p>A table. An invitation. A welcome. A little time set aside for conversation.</p>
-            <p>
+
+            <p class="hero-note">
               <strong>Now seating pilot participants.</strong><br />
               <strong>Now welcoming possible host spaces.</strong>
             </p>
