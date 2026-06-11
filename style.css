@@ -29,22 +29,22 @@ overflow-x: hidden;
 
 .site-header {
 width: 100%;
-padding: 34px 7%;
+padding: 42px 7%;
 background: var(--paper);
 border-bottom: 1px solid rgba(23, 20, 17, 0.055);
 }
 
 .brand img {
-width: 150px;
+width: 220px;
 max-width: 100%;
 display: block;
 }
 
+/* Layout */
+
 main {
 padding-top: 0;
 }
-
-/* Layout */
 
 .section {
 padding: 78px 7%;
@@ -223,11 +223,11 @@ color: var(--charcoal);
 
 @media (max-width: 900px) {
 .site-header {
-padding: 28px 7%;
+padding: 32px 7%;
 }
 
 .brand img {
-width: 142px;
+width: 190px;
 }
 
 .section {
